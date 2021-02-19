@@ -1,11 +1,11 @@
 const { Router } = require('express')
-const Controller = require('./controller')
+const { Getnotas } = require('./controller')
 
 function NotasNetwork ( app ) {
     const Nrouter = Router();
 
-    Nrouter.get('/', async (req, res) => {
-        Controller(req, res)
+    Nrouter.get('/:asignatura', async (req, res) => {
+        Getnotas(req, res)
     })
 
     return Nrouter;
