@@ -1,12 +1,11 @@
 const { Router } = require('express')
+const Controller = require('./controller')
 
 function NotasNetwork ( app ) {
     const Nrouter = Router();
 
     Nrouter.get('/', async (req, res) => {
-        res.json({
-            message: "Bienvenido a Notas"
-        })
+        Controller(req, res)
     })
 
     return Nrouter;
