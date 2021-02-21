@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/JuanesGalvis/One-Score-Man#readme",
   "dependencies": {
+    "@hapi/boom": "^9.1.1",
     "express": "^4.17.1",
+    "joi": "^17.4.0",
     "mongodb": "^3.6.4"
   },
   "devDependencies": {
