@@ -1,9 +1,6 @@
 const { Router } = require('express')
 
-const { GetAsignaturas } = require('./controller')
-const { InsertAsignatura } = require('./controller')
-const { UpdateAsignatura } = require('./controller')
-const { DeleteAsignatura } = require('./controller')
+const { GetAsignaturas, InsertAsignatura, UpdateAsignatura, DeleteAsignatura } = require('./controller')
 
 const { MiddlewareValidate } = require('./store')
 

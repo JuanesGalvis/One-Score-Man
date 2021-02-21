@@ -1,7 +1,6 @@
 const { Connect } = require('./store')
 const env = require('../../../config');
 const { ObjectId } = require('mongodb')
-const { func } = require('joi');
 
 async function GetAsignaturas(req, res) {
 
@@ -10,7 +9,7 @@ async function GetAsignaturas(req, res) {
     })
 
     res.json({
-        message: "Hola desde el controlador de asignaturas",
+        message: "Asignaturas:",
         datos: data
     })
 

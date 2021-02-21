@@ -1,6 +1,5 @@
 const database = require('../../database/db')
 const boom = require('@hapi/boom')
-const env = require('../../../config');
 const joi = require('joi');
 
 async function Connect() {
