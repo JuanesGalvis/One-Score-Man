@@ -12,7 +12,7 @@ async function Getnotas(req, res) {
 
     res.json({
         message: "NotaS:",
-        datos: data
+        datos: data !== [] ? data : "La nota que ingresaste no existe"
     })
 
 }
@@ -38,9 +38,9 @@ async function CrearNota (req, res) {
 
     const NotaID = await Connect().then((db) => {
         return db.collection(env.COLL_N).insertOne({
-            descripcion: req.body.descripcion ,
-            valor: req.body.valor,
-            porcentaje: req.body.porcentaje,
+            descripcion: req.body.Descripcion ,
+            valor: req.body.Valor,
+            porcentaje: req.body.Porcentaje,
             fecha: new Date(),
             asignatura: ObjectId(req.params.asignatura)
         })
@@ -62,9 +62,9 @@ async function EditarNota (req, res) {
                 _id: ObjectId(req.params.nota)
             },
             { $set: {
-                descripcion: req.body.descripcion ,
-                valor: req.body.valor,
-                porcentaje: req.body.porcentaje,
+                descripcion: req.body.Descripcion ,
+                valor: req.body.Valor,
+                porcentaje: req.body.Porcentaje,
             }}, { upsert: true }
         )
         .then((response) => {

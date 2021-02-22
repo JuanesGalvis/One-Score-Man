@@ -10,11 +10,11 @@ async function Connect() {
 
 /** ESQUEMAS  */
 const Schema = joi.object({
-    descripcion: joi.string().required(),
-    valor: joi.number().required(),
-    porcentaje: joi.number().required(),
-    fecha: joi.date().required(),
-    asignatura: joi.string().required()
+    Descripcion: joi.string().required(),
+    Valor: joi.number().required(),
+    Porcentaje: joi.number().required(),
+    Fecha: joi.date().required(),
+    Asignatura: joi.string().required()
 })
 
 function Validarschema (data) {
@@ -25,11 +25,11 @@ function Validarschema (data) {
 function MiddlewareValidate () {
     return function (req, res, next) {
         const response = Validarschema({
-            descripcion: req.body.descripcion ,
-            valor: req.body.valor,
-            porcentaje: req.body.porcentaje,
-            fecha: new Date(),
-            asignatura: req.params.asignatura
+            Descripcion: req.body.Descripcion ,
+            Valor: req.body.Valor,
+            Porcentaje: req.body.Porcentaje,
+            Fecha: new Date(),
+            Asignatura: req.params.asignatura
         })
 
         response ? next(boom.badRequest(response)) : next();
