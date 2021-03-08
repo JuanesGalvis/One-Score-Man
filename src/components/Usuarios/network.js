@@ -1,12 +1,12 @@
 const { Router } = require('express')
+const { SignUp } = require('./controller') 
+const { ValidateMiddlewre } = require('./store')
 
 function UsuariosNetwork ( app ) {
     const Urouter = Router();
 
-    Urouter.get('/', async (req, res) => {
-        res.json({
-            message: "Bienvenido a Usuarios"
-        })
+    Urouter.post('/register', ValidateMiddlewre(), async (req, res) => {
+        SignUp(req, res);
     })
 
     return Urouter;
