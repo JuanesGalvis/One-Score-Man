@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { SignUp } = require('./controller') 
+const { SignUp, Login } = require('./controller') 
 const { ValidateMiddlewre } = require('./store')
 
 function UsuariosNetwork ( app ) {
@@ -7,6 +7,10 @@ function UsuariosNetwork ( app ) {
 
     Urouter.post('/register', ValidateMiddlewre(), async (req, res) => {
         SignUp(req, res);
+    })
+
+    Urouter.post('/login', ValidateMiddlewre(), async (req, res) => {
+        Login(req, res);
     })
 
     return Urouter;

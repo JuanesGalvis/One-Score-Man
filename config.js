@@ -3,7 +3,7 @@ const env = require('dotenv')
 
 env.config();
 
-const { PORT, DB_PASSWORD, DB_USER, DB_NAME, COLL_U, COLL_A, COLL_N } = process.env;
+const { PORT, DB_PASSWORD, DB_USER, DB_NAME, COLL_U, COLL_A, COLL_N, SECRET } = process.env;
 
 module.exports = {
     PORT,
@@ -12,5 +12,6 @@ module.exports = {
     DB_NAME,
     COLL_U,
     COLL_A,
-    COLL_N
+    COLL_N,
+    SECRET
 }
